@@ -40,5 +40,15 @@ namespace ValidationLog_csharp
         {
             return GetMessagesList().ToArray();
         }
+
+        public string GetMessagesText()
+        {
+            string MessagesText = "";
+            foreach (MessageValidation item in Messages)
+            {
+                MessagesText += $"{item.Message()}\n";
+            }
+            return MessagesText;
+        }
     }
 }
