@@ -50,5 +50,22 @@ namespace ValidationLog_csharp
             }
             return MessagesText;
         }
+
+        public string GetMessagesText(string separator)
+        {
+            string MessagesText = "";
+            int cpt = 0;
+            foreach (MessageValidation item in Messages)
+            {
+                if (cpt > 0)
+                {
+                    MessagesText += $"{separator}";
+                }
+                MessagesText += $"{item.Message()}";
+                cpt += 1;
+            }
+            return MessagesText;
+        }
+
     }
 }
